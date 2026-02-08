@@ -10,6 +10,8 @@ class AppConfig
     public string $logger;
     public string $secret;
     public array $providers;
+    public $timezone;
+
     public function __construct(array $config)
     {
         $this->debug = $config['debug'] ?? false;
@@ -18,5 +20,6 @@ class AppConfig
         $this->logger = $config['logger'] ?? 'file';
         $this->secret = $config['secret'] ?? 'secret_key';
         $this->providers = $config['providers'] ?? [];
+        $this->timezone = $config['timezone'] ?? 'UTC';
     }
 }
