@@ -1,9 +1,8 @@
 <p align="center">
-  <img src="./art/logo.png" alt="Pulsar Php Logo" width="300">
+  <img src="./art/logot.png" alt="Pulsar Php Logo" width="400">
 </p>
 
-
-### About this framework
+### About
 
 A minimal and powerful PHP framework for building fast, modern HTTP services.
 
