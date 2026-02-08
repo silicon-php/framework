@@ -23,6 +23,11 @@ class Request
         );
     }
 
+    public function setRouteParams(array $params): void
+    {
+        $this->query = new Parameter($params);
+    }
+
     public function cookies(): CookieBag
     {
         return $this->cookies;

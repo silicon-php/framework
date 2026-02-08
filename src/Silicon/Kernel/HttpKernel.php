@@ -27,6 +27,7 @@ class HttpKernel implements KernelInterface
     public function handle(Request $request, Response $response): Response
     {
         $route = $this->router->match($request);
+        $request->setRouteParams($route->parameters());
         $this->pipeline->setMiddlewares(array_merge($this->coreMiddlewares(), $route->middlewares()));
         return $this->pipeline->handle($request, $response, $route);
     }
