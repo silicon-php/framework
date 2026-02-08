@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="./art/logo.png" alt="Pulsar Php Logo" width="100">
+  <img src="./art/silicio.png" alt="Pulsar Php Logo" width="70">
 </p>
 
-<h1 align="center">Silicon PHP (Framework) (Beta)</h1>
+<h1 align="center">Silicon PHP</h1>
 
 ### About Pulsar
 
