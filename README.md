@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="./art/silicio.png" alt="Pulsar Php Logo" width="70">
+  <img src="./art/logo.png" alt="Pulsar Php Logo" width="100">
 </p>
 
 <h1 align="center">Silicon PHP</h1>
 
-### About Pulsar
+### About Silicon Framework
 
 A minimal and powerful PHP framework for building fast, modern HTTP services.
 
