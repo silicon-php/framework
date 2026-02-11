@@ -2,3 +2,4 @@ vendor/
 cache/
 logs/
 .env
+.php-cs-fixer.cache

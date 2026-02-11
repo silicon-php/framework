@@ -12,7 +12,7 @@ class Validator
             v::email()->assert($value);
             return $this;
         } catch (\Exception $e) {
-            throw new \InvalidArgumentException($value . " Invalid email format.");
+            throw new \InvalidArgumentException($value . ' Invalid email format.');
         }
     }
 
@@ -27,19 +27,23 @@ class Validator
                 ->assert($value);
             return $this;
         } catch (\Exception $e) {
-            throw new \InvalidArgumentException($value . " Invalid password format.");
+            throw new \InvalidArgumentException($value . ' Invalid password format.');
         }
     }
 
-    public function number($value,  $min = null, $max = null): Validator
+    public function number($value, $min = null, $max = null): Validator
     {
         try {
             v::number()->assert($value);
-            if ($max) v::max($max)->assert($value);
-            if ($min) v::min($min)->assert($value);
+            if ($max) {
+                v::max($max)->assert($value);
+            }
+            if ($min) {
+                v::min($min)->assert($value);
+            }
             return $this;
         } catch (\Exception $e) {
-            throw new \InvalidArgumentException($value . " Invalid number format.");
+            throw new \InvalidArgumentException($value . ' Invalid number format.');
         }
     }
 
@@ -49,7 +53,7 @@ class Validator
             v::uuid()->assert($value);
             return $this;
         } catch (\Exception $e) {
-            throw new \InvalidArgumentException($value . " Invalid UUID format.");
+            throw new \InvalidArgumentException($value . ' Invalid UUID format.');
         }
     }
 
@@ -59,7 +63,7 @@ class Validator
             v::phone()->assert($value);
             return $this;
         } catch (\Exception $e) {
-            throw new \InvalidArgumentException($value . " Invalid phone format.");
+            throw new \InvalidArgumentException($value . ' Invalid phone format.');
         }
     }
 
@@ -69,7 +73,7 @@ class Validator
             v::alnum()->assert($value);
             return $this;
         } catch (\Exception $e) {
-            throw new \InvalidArgumentException($value . " Invalid alphanumeric format.");
+            throw new \InvalidArgumentException($value . ' Invalid alphanumeric format.');
         }
     }
 
@@ -79,7 +83,7 @@ class Validator
             v::boolVal()->assert($value);
             return $this;
         } catch (\Exception $e) {
-            throw new \InvalidArgumentException($value . " Invalid boolean format.");
+            throw new \InvalidArgumentException($value . ' Invalid boolean format.');
         }
     }
 
@@ -89,7 +93,7 @@ class Validator
             v::date()->assert($value);
             return $this;
         } catch (\Exception $e) {
-            throw new \InvalidArgumentException($value . " Invalid date format.");
+            throw new \InvalidArgumentException($value . ' Invalid date format.');
         }
     }
 
@@ -99,7 +103,7 @@ class Validator
             v::time()->assert($value);
             return $this;
         } catch (\Exception $e) {
-            throw new \InvalidArgumentException($value . " Invalid time format.");
+            throw new \InvalidArgumentException($value . ' Invalid time format.');
         }
     }
 
@@ -109,7 +113,7 @@ class Validator
             v::stringType()->assert($value);
             return $this;
         } catch (\Exception $e) {
-            throw new \InvalidArgumentException($value . " Invalid string format.");
+            throw new \InvalidArgumentException($value . ' Invalid string format.');
         }
     }
 
@@ -125,7 +129,7 @@ class Validator
             }
             return $this;
         } catch (\Exception $e) {
-            throw new \InvalidArgumentException($value . " Invalid array format.");
+            throw new \InvalidArgumentException($value . ' Invalid array format.');
         }
     }
 
@@ -135,7 +139,7 @@ class Validator
             v::regex($regex)->assert($value);
             return $this;
         } catch (\Exception $e) {
-            throw new \InvalidArgumentException($value . " Invalid regex format.");
+            throw new \InvalidArgumentException($value . ' Invalid regex format.');
         }
     }
 }

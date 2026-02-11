@@ -2,9 +2,6 @@
 
 namespace Silicon\Http;
 
-use Silicon\Http\Request;
-use Silicon\Http\Route;
-
 class Router implements RouterInterface
 {
     private array $routes = [];

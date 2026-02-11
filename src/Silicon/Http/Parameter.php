@@ -4,7 +4,9 @@ namespace Silicon\Http;
 
 final class Parameter
 {
-    public function __construct(private array $parameters = []) {}
+    public function __construct(private array $parameters = [])
+    {
+    }
 
     public function get(string $key, mixed $default = null): mixed
     {

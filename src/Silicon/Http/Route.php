@@ -10,7 +10,8 @@ final class Route
         /* @var MiddlewareInterface[] */
         private array $middlewares = [],
         public array $parameters = []
-    ) {}
+    ) {
+    }
 
     public function controller(): mixed
     {

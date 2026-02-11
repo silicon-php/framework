@@ -2,8 +2,8 @@
 
 namespace Silicon\Http\Middleware;
 
-use Silicon\Http\CookieSigner;
 use Silicon\Http\CookieEncrypter;
+use Silicon\Http\CookieSigner;
 use Silicon\Http\Request;
 use Silicon\Http\Response;
 

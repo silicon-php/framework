@@ -10,7 +10,8 @@ class Request
         public Parameter $headers,
         public CookieBag $cookies,
         public Parameter $server,
-    ) {}
+    ) {
+    }
 
     public static function fromGlobals(): self
     {

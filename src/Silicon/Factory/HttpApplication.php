@@ -4,9 +4,8 @@ namespace Silicon\Factory;
 
 use Silicon\Http\Request;
 use Silicon\Http\Response;
-use Silicon\Kernel\HttpKernel;
 use Silicon\Http\Router;
-
+use Silicon\Kernel\HttpKernel;
 
 class HttpApplication implements ApplicationInterface
 {
@@ -33,7 +32,7 @@ class HttpApplication implements ApplicationInterface
         try {
             $this->boot();
             $request = Request::fromGlobals();
-            $response = new Response("", 200);
+            $response = new Response('', 200);
 
             $kernel = new HttpKernel($this->router);
 
@@ -47,13 +46,13 @@ class HttpApplication implements ApplicationInterface
     private function error(\Throwable $th): void
     {
         if (config()->app()->debug) {
-            $whoops = new \Whoops\Run;
+            $whoops = new \Whoops\Run();
             $whoops->allowQuit(false);
             $whoops->writeToOutput(false);
-            $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+            $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
             echo $whoops->handleException($th);
         } else {
-            $response = new Response("Internal Server Error", 500);
+            $response = new Response('Internal Server Error', 500);
             $response->send();
         }
     }

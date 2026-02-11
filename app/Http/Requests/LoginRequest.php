@@ -10,9 +10,9 @@ class LoginRequest extends CustomRequest
     public function rules(RequestValidator $validator): void
     {
         $validator
-            ->required(["email", "password"])
-            ->email($this->input("email"))
-            ->password($this->input("password"), 8);
+            ->required(['email', 'password'])
+            ->email($this->input('email'))
+            ->password($this->input('password'), 8);
     }
 
     public function authorize(): bool

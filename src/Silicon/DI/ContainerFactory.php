@@ -16,11 +16,10 @@ class ContainerFactory
         // Register services and dependencies here
         // e.g., $container->set(ServiceInterface::class, new ServiceImplementation());
 
-        $container->set(CookieSigner::class, fn(Container $container) => new CookieSigner(config()->http()->cookie->secret));
-        $container->set(CookieEncrypter::class, fn(Container $container) => new CookieEncrypter(config()->http()->cookie->secret));
+        $container->set(CookieSigner::class, fn (Container $container) => new CookieSigner(config()->http()->cookie->secret));
+        $container->set(CookieEncrypter::class, fn (Container $container) => new CookieEncrypter(config()->http()->cookie->secret));
 
         $container->set(LoggerInterface::class, ConsoleLogger::class);
-
 
         return $container;
     }

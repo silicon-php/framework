@@ -2,12 +2,8 @@
 
 namespace Silicon\Http;
 
-use Silicon\Http\Route;
-
 class ControllerResolver
 {
-
-
     public function resolve(Route $route): callable
     {
         $controller = $route->controller();

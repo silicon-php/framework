@@ -46,7 +46,7 @@ final class Header
     public function toLines(): array
     {
         return array_map(
-            fn($value) => $this->name . ': ' . $value,
+            fn ($value) => $this->name . ': ' . $value,
             $this->values
         );
     }

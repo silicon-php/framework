@@ -13,13 +13,13 @@ class LoginController
         $email = $req->email();
         $password = $req->password();
 
-        $res->setEncryptedCookie(new Cookie("access_token", ""));
-        $res->setEncryptedCookie(new Cookie("refresh_token", ""));
+        $res->setEncryptedCookie(new Cookie('access_token', ''));
+        $res->setEncryptedCookie(new Cookie('refresh_token', ''));
 
         return $res->json([
-            "userId" => "",
-            "accessToken" => "",
-            "refreshToken" => "",
+            'userId' => '',
+            'accessToken' => '',
+            'refreshToken' => '',
         ]);
     }
 }

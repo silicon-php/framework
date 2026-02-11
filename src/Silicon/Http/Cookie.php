@@ -25,8 +25,9 @@ final class Cookie
         bool $httpOnly = true,
         ?SameSite $sameSite = null
     ) {
-        if ($sameSite === SameSite::NONE && !$secure)
+        if ($sameSite === SameSite::NONE && !$secure) {
             throw new \InvalidArgumentException('Cookies with SameSite=None must be Secure');
+        }
 
         $this->name = $name;
         $this->value = $value;
@@ -95,12 +96,24 @@ final class Cookie
     {
         $parts = [rawurlencode($this->name) . '=' . rawurlencode($this->value)];
 
-        if ($this->expires !== null) $parts[] = 'Expires=' . gmdate('D, d M Y H:i:s T', $this->expires);
-        if ($this->path)  $parts[] = 'Path=' . $this->path;
-        if ($this->domain) $parts[] = 'Domain=' . $this->domain;
-        if ($this->secure)  $parts[] = 'Secure';
-        if ($this->httpOnly) $parts[] = 'HttpOnly';
-        if ($this->sameSite) $parts[] = 'SameSite=' . $this->sameSite->value;
+        if ($this->expires !== null) {
+            $parts[] = 'Expires=' . gmdate('D, d M Y H:i:s T', $this->expires);
+        }
+        if ($this->path) {
+            $parts[] = 'Path=' . $this->path;
+        }
+        if ($this->domain) {
+            $parts[] = 'Domain=' . $this->domain;
+        }
+        if ($this->secure) {
+            $parts[] = 'Secure';
+        }
+        if ($this->httpOnly) {
+            $parts[] = 'HttpOnly';
+        }
+        if ($this->sameSite) {
+            $parts[] = 'SameSite=' . $this->sameSite->value;
+        }
 
         return implode('; ', $parts);
     }

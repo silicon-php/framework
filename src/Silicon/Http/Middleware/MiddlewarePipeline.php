@@ -3,10 +3,10 @@
 namespace Silicon\Http\Middleware;
 
 use Silicon\Http\ControllerArgumentResolver;
+use Silicon\Http\ControllerResolver;
 use Silicon\Http\Request;
 use Silicon\Http\Response;
 use Silicon\Http\Route;
-use Silicon\Http\ControllerResolver;
 
 final class MiddlewarePipeline
 {
@@ -14,7 +14,8 @@ final class MiddlewarePipeline
 
     public function __construct(
         private ControllerResolver $resolver
-    ) {}
+    ) {
+    }
 
     public function setMiddlewares(array $middlewares): void
     {
@@ -23,7 +24,7 @@ final class MiddlewarePipeline
 
     public function handle(Request $request, Response $response, Route $route): Response
     {
-        $next = fn(Request $req, Response $res) => $this->callController($route, $req, $res);
+        $next = fn (Request $req, Response $res) => $this->callController($route, $req, $res);
 
         foreach (array_reverse($this->middlewares) as $middleware) {
             $next = function (Request $req, Response $res) use ($middleware, $next) {

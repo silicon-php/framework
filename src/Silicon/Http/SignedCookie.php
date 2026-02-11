@@ -8,7 +8,8 @@ final class SignedCookie
 {
     public function __construct(
         private CookieSigner $signer
-    ) {}
+    ) {
+    }
 
     public function create(
         string $name,

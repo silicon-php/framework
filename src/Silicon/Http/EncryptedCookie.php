@@ -8,7 +8,8 @@ final class EncryptedCookie
 {
     public function __construct(
         private CookieEncrypter $encrypter
-    ) {}
+    ) {
+    }
 
     public function create(
         string $name,

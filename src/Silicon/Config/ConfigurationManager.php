@@ -12,8 +12,8 @@ class ConfigurationManager
     public function __construct()
     {
         // Framework default configurations
-        $this->set("app", new AppConfig(require Path::config("app.php")));
-        $this->set("http", new HttpConfig(require Path::config("http.php")));
+        $this->set('app', new AppConfig(require Path::config('app.php')));
+        $this->set('http', new HttpConfig(require Path::config('http.php')));
         // TODO: Load user configurations and validations
     }
 
@@ -24,12 +24,12 @@ class ConfigurationManager
 
     public function app(): AppConfig
     {
-        return $this->config["app"];
+        return $this->config['app'];
     }
 
     public function http(): HttpConfig
     {
-        return $this->config["http"];
+        return $this->config['http'];
     }
 
     public function get(string $key, mixed $default = null): mixed

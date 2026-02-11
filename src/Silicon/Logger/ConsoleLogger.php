@@ -12,7 +12,7 @@ class ConsoleLogger implements LoggerInterface
 
     public function __construct()
     {
-        $this->logger = new Logger("app");
+        $this->logger = new Logger('app');
         $this->logger->pushHandler(new StreamHandler('php://stdout', Level::Debug));
     }
 
