@@ -1,5 +1,9 @@
 <p align="center">
-  <img src="./art/logot.png" alt="Pulsar Php Logo" width="400">
+<img src="./github/images/logo.png" width="300" />
+</p>
+
+<p align="center">
+ <img src="./github/images/silicon.png" width="600" />
 </p>
 
 ### About
